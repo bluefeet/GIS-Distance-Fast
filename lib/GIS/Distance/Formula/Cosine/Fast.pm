@@ -1,13 +1,13 @@
-package GIS::Distance::Formula::Haversine::Fast;
+package GIS::Distance::Formula::Cosine::Fast;
 
 =head1 NAME
 
-GIS::Distance::Formula::Haversine::Fast - C implementation of GIS::Distance::Formula::Haversine.
+GIS::Distance::Formula::Cosine::Fast - C implementation of GIS::Distance::Formula::Cosine.
 
 =head1 DESCRIPTION
 
 This module is used by L<GIS::Distance> and has the same API as
-L<GIS::Distance::Formula::Haversine>.
+L<GIS::Distance::Formula::Cosine>.
 
 =head1 AUTHOR
 
@@ -21,7 +21,7 @@ it under the same terms as Perl itself.
 =cut
 
 use Moose;
-extends 'GIS::Distance::Formula::Haversine';
+extends 'GIS::Distance::Formula::Cosine';
 
 use Class::Measure::Length;
 use Inline::Files;
@@ -52,10 +52,9 @@ double _distance(double lat1, double lon1, double lat2, double lon2) {
     lon2 = _deg2rad( lon2 );
     lat2 = _deg2rad( lat2 );
 
-    double dlon = lon2 - lon1;
-    double dlat = lat2 - lat1;
-    double a = pow( sin(dlat/2), 2 ) + cos(lat1) * cos(lat2) * pow( sin(dlon/2), 2 );
-    double c = 2 * atan2( sqrt(a), sqrt(1-a) );
+    double a = sin( lat1 ) * sin( lat2 );
+    double b = cos( lat1 ) * cos( lat2 ) * cos( lon2 - lon1 );
+    double c = acos( a + b );
 
     return c;
 }
