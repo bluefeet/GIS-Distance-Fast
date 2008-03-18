@@ -36,11 +36,11 @@ __END__
 
 =head1 FORMULAS
 
-L<GID::Distance::Formula::Cosine::Fast>
+L<GIS::Distance::Formula::Cosine::Fast>
 
-L<GID::Distance::Formula::Haversine::Fast>
+L<GIS::Distance::Formula::Haversine::Fast>
 
-L<GID::Distance::Formula::Vincenty::Fast>
+L<GIS::Distance::Formula::Vincenty::Fast>
 
 =head1 BUGS
 
