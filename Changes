@@ -1,7 +1,9 @@
 Revision history for Perl extension GIS::Distance::Fast.
 
-0.02
+0.02 : 2008-03-23
  - Fixed some documentation typos that were using GID instead of GIS.
+ - Added a TEST COVERAGE section with output from Devel::Cover.
+ - Added dependencies for Inline::C and Inline::Files to make.
 
 0.01 : 2008-03-16
  - First release.

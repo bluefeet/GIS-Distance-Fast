@@ -20,5 +20,7 @@ recommends:
 requires:
   GIS::Distance: 0.02
   Inline: 0.44
+  Inline::C: 0
+  Inline::Files: 0.62
   perl: 5.8.3
-version: 0.01
+version: 0.02
