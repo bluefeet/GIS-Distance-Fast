@@ -29,7 +29,18 @@ directories all over the place.
 use strict;
 use warnings;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
+our @ISA;
+
+eval {
+   require XSLoader;
+   XSLoader::load('GIS::Distance::Fast', $VERSION);
+   1;
+} or do {
+   require DynaLoader;
+   push @ISA, 'DynaLoader';
+   bootstrap GIS::Distance::Fast $VERSION;
+};
 
 1;
 __END__
@@ -47,17 +58,6 @@ L<GIS::Distance::Formula::Vincenty::Fast>
 The L<GIS::Distance::Formula::Vincenty::Fast> produces slightly different results than
 L<GIS::Distance::Formula::Vincenty>.  Read the POD for L<GIS::Distance::Formula::Vincenty::Fast>
 for details.
-
-=head1 TEST COVERAGE
-
-  ---------------------------- ------ ------ ------ ------ ------ ------ ------
-  File                           stmt   bran   cond    sub    pod   time  total
-  ---------------------------- ------ ------ ------ ------ ------ ------ ------
-  ...ce/Formula/Cosine/Fast.pm  100.0    n/a    n/a  100.0  100.0   37.4  100.0
-  ...Formula/Haversine/Fast.pm  100.0    n/a    n/a  100.0  100.0   25.6  100.0
-  .../Formula/Vincenty/Fast.pm  100.0    n/a    n/a  100.0  100.0   37.0  100.0
-  Total                         100.0    n/a    n/a  100.0  100.0  100.0  100.0
-  ---------------------------- ------ ------ ------ ------ ------ ------ ------
 
 =head1 AUTHOR
 

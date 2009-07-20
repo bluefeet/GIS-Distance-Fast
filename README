@@ -1,2 +1,40 @@
-perldoc lib/GIS/Distance/Fast.pm
+NAME
+    GIS::Distance::Fast - C implementation of GIS::Distance formulas.
+
+DESCRIPTION
+    This distribution re-implements some, but not all, of the formulas that
+    come with GIS::Distance in the C programming language. C code is
+    generally much faster than the perl equivilent.
+
+    In most of my testing I've found that the C version of the formulas
+    outperform the Perl equivelent by at least 2x.
+
+    This module need not be used directly. GIS::Distance will automatically
+    use the ::Fast formulas when they are available.
+
+INLINE
+    Rather than using the complex XS or alternatives, I've opted to use
+    Inline::C since it is so much simpler to bind the C code to Perl. Due to
+    this you should make a directory called '.Inline' in your home
+    directory. Otherwise you will end up with _Inline directories all over
+    the place.
+
+FORMULAS
+    GIS::Distance::Formula::Cosine::Fast
+
+    GIS::Distance::Formula::Haversine::Fast
+
+    GIS::Distance::Formula::Vincenty::Fast
+
+BUGS
+    The GIS::Distance::Formula::Vincenty::Fast produces slightly different
+    results than GIS::Distance::Formula::Vincenty. Read the POD for
+    GIS::Distance::Formula::Vincenty::Fast for details.
+
+AUTHOR
+    Aran Clary Deltac <bluefeet@cpan.org>
+
+LICENSE
+    This library is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself.
 

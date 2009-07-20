@@ -1,16 +1,12 @@
-use strict;
-use warnings;
-
 use inc::Module::Install;
 
 name     'GIS-Distance-Fast';
 perl_version '5.008003';
 all_from 'lib/GIS/Distance/Fast.pm';
+readme_from 'lib/GIS/Distance/Fast.pm';
+githubmeta;
 
 requires 'GIS::Distance' => 0.02;
-requires 'Inline'        => 0.44;
-requires 'Inline::C'     => 0;
-requires 'Inline::Files' => 0.62;
 
 build_requires 'Test::More' => 0.62;
 
