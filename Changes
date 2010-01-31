@@ -1,5 +1,9 @@
 Revision history for Perl extension GIS::Distance::Fast.
 
+0.05 : 2010-01-31
+ - Use fabs() instead of abs() in Vincenting calculations.
+ - Use higher-precision PI that comes with math.h in all formulas.
+
 0.04 : 2010-01-30
  - Docs were still stating that Inline::C was being used.
  - Updated to require latest GIS::Distance version.
