@@ -12,13 +12,6 @@ DESCRIPTION
     This module need not be used directly. GIS::Distance will automatically
     use the ::Fast formulas when they are available.
 
-INLINE
-    Rather than using the complex XS or alternatives, I've opted to use
-    Inline::C since it is so much simpler to bind the C code to Perl. Due to
-    this you should make a directory called '.Inline' in your home
-    directory. Otherwise you will end up with _Inline directories all over
-    the place.
-
 FORMULAS
     GIS::Distance::Formula::Cosine::Fast
 

@@ -8,7 +8,7 @@ githubmeta;
 
 requires 'GIS::Distance' => 0.06;
 
-test_requires 'Test::More' => 0.62;
+test_requires 'Test::More' => 0.94;
 
 WriteAll;
 
