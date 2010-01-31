@@ -6,11 +6,9 @@ all_from 'lib/GIS/Distance/Fast.pm';
 readme_from 'lib/GIS/Distance/Fast.pm';
 githubmeta;
 
-requires 'GIS::Distance' => 0.02;
+requires 'GIS::Distance' => 0.06;
 
-build_requires 'Test::More' => 0.62;
-
-recommends 'Test::Pod' => 1.22;
+test_requires 'Test::More' => 0.62;
 
 WriteAll;
 

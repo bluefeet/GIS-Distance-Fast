@@ -1,5 +1,9 @@
 Revision history for Perl extension GIS::Distance::Fast.
 
+0.04 : 2010-01-30
+ - Docs were still stating that Inline::C was being used.
+ - Updated to require latest GIS::Distance version.
+
 0.03 : 2009-07-20
  - Replaced Inline::C with real XS.
  - Add tests for pod, pod coverage, and perl critic.

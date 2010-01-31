@@ -16,20 +16,12 @@ outperform the Perl equivelent by at least 2x.
 This module need not be used directly.  L<GIS::Distance> will automatically
 use the ::Fast formulas when they are available.
 
-=head1 INLINE
-
-Rather than using the complex XS or alternatives, I've opted to
-use L<Inline::C> since it is so much simpler to bind the C code
-to Perl.  Due to this you should make a directory called '.Inline'
-in your home directory.  Otherwise you will end up with _Inline
-directories all over the place.
-
 =cut
 
 use strict;
 use warnings;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 our @ISA;
 
 eval {

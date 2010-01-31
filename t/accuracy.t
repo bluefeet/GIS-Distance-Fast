@@ -2,7 +2,7 @@
 use strict;
 use warnings;
 
-use Test::More tests => 4;
+use Test::More;
 
 use_ok( 'GIS::Distance' );
 
@@ -19,6 +19,8 @@ foreach my $formula (@formulas) {
 
     is_close( $s_length, $f_length, $formula );
 }
+
+done_testing;
 
 sub is_close {
     my ($num1, $num2, $description) = @_;
