@@ -20,7 +20,7 @@ it under the same terms as Perl itself.
 
 =cut
 
-use Moose;
+use Any::Moose;
 extends 'GIS::Distance::Formula::Cosine';
 
 use GIS::Distance::Fast;

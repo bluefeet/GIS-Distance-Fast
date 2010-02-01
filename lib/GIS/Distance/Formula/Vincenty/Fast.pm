@@ -26,7 +26,7 @@ it under the same terms as Perl itself.
 
 =cut
 
-use Moose;
+use Any::Moose;
 extends 'GIS::Distance::Formula::Vincenty';
 
 use GIS::Distance::Fast;
