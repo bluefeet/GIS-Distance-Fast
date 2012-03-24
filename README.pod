@@ -1,7 +1,3 @@
-package GIS::Distance::Fast;
-use strict;
-use warnings;
-
 =head1 NAME
 
 GIS::Distance::Fast - C implementation of GIS::Distance formulas.
@@ -17,24 +13,6 @@ outperform the Perl equivelent by at least 2x.
 
 This module need not be used directly.  L<GIS::Distance> will automatically
 use the ::Fast formulas when they are available.
-
-=cut
-
-our @ISA;
-our $VERSION;
-
-eval {
-    require XSLoader;
-    XSLoader::load('GIS::Distance::Fast', $VERSION);
-    1;
-} or do {
-    require DynaLoader;
-    push @ISA, 'DynaLoader';
-    bootstrap GIS::Distance::Fast $VERSION;
-};
-
-1;
-__END__
 
 =head1 FORMULAS
 
