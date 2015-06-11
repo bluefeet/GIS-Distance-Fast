@@ -20,11 +20,14 @@ it under the same terms as Perl itself.
 
 =cut
 
-use Any::Moose;
-extends 'GIS::Distance::Formula::Haversine';
-
 use GIS::Distance::Fast;
 use Class::Measure::Length qw( length );
+
+use Moo;
+use strictures 1;
+use namespace::clean;
+
+with 'GIS::Distance::Formula';
 
 sub distance {
     my $self = shift;

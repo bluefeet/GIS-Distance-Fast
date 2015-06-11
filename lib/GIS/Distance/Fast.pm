@@ -1,6 +1,4 @@
 package GIS::Distance::Fast;
-use strict;
-use warnings;
 
 =head1 NAME
 
@@ -19,6 +17,8 @@ This module need not be used directly.  L<GIS::Distance> will automatically
 use the ::Fast formulas when they are available.
 
 =cut
+
+use strictures 1;
 
 our @ISA;
 our $VERSION;

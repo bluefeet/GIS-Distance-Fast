@@ -1,3 +1,5 @@
+=pod
+
 =head1 NAME
 
 GIS::Distance::Fast - C implementation of GIS::Distance formulas.
@@ -37,3 +39,4 @@ Aran Clary Deltac <bluefeet@cpan.org>
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
 
+=cut
