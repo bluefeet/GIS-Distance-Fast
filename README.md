@@ -28,6 +28,12 @@ The [GIS::Distance::Formula::Vincenty::Fast](https://metacpan.org/pod/GIS::Dista
 [GIS::Distance::Formula::Vincenty](https://metacpan.org/pod/GIS::Distance::Formula::Vincenty).  Read the POD for [GIS::Distance::Formula::Vincenty::Fast](https://metacpan.org/pod/GIS::Distance::Formula::Vincenty::Fast)
 for details.
 
+# SUPPORT
+
+Please submit bugs and feature requests to the GIS-Distance-Fast GitHub issue tracker:
+
+[https://github.com/bluefeet/GIS-Distance-Fast/issues](https://github.com/bluefeet/GIS-Distance-Fast/issues)
+
 # AUTHORS
 
     Aran Clary Deltac <bluefeet@gmail.com>

@@ -52,6 +52,12 @@ The L<GIS::Distance::Formula::Vincenty::Fast> produces slightly different result
 L<GIS::Distance::Formula::Vincenty>.  Read the POD for L<GIS::Distance::Formula::Vincenty::Fast>
 for details.
 
+=head1 SUPPORT
+
+Please submit bugs and feature requests to the GIS-Distance-Fast GitHub issue tracker:
+
+L<https://github.com/bluefeet/GIS-Distance-Fast/issues>
+
 =head1 AUTHORS
 
     Aran Clary Deltac <bluefeet@gmail.com>
