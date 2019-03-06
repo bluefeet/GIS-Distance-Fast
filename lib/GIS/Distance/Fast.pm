@@ -22,7 +22,6 @@ use the ::Fast formulas when they are available.
 =cut
 
 our @ISA;
-our $VERSION;
 
 eval {
     require XSLoader;

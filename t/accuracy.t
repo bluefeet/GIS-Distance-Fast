@@ -1,9 +1,9 @@
 #!/usr/bin/env perl
-use strictures 1;
+use 5.008001;
+use strictures 2;
+use Test2::V0;
 
-use Test::More;
-
-use_ok( 'GIS::Distance' );
+use GIS::Distance;
 
 my @coords = ( 34.202361, -118.601875,  37.752258, -122.441254 );
 my @formulas = qw( Haversine Cosine Vincenty );
@@ -31,4 +31,3 @@ sub is_close {
         pass( "$description - $num1 =~ $num2" );
     }
 }
-
