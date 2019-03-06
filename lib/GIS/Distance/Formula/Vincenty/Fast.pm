@@ -3,6 +3,8 @@ use 5.008001;
 use strictures 2;
 our $VERSION = '0.08';
 
+=encoding utf8
+
 =head1 NAME
 
 GIS::Distance::Formula::Vincenty::Fast - C implementation of GIS::Distance::Formula::Vincenty.
@@ -17,15 +19,6 @@ L<GIS::Distance::Formula::Vincenty>.
 The results from Formula::Vincenty versus Formula::Vincenty::Fast are slightly
 different.  I'm still not sure why this is, as the C code is nearly identical to
 the Perl code.
-
-=head1 AUTHOR
-
-Aran Clary Deltac <bluefeet@cpan.org>
-
-=head1 LICENSE
-
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
 
 =cut
 
@@ -46,3 +39,11 @@ sub distance {
 }
 
 1;
+__END__
+
+=head1 AUTHORS AND LICENSE
+
+See L<GIS::Distance::Fast/AUTHORS> and L<GIS::Distance::Fast/LICENSE>.
+
+=cut
+

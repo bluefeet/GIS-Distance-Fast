@@ -3,6 +3,8 @@ use 5.008001;
 use strictures 2;
 our $VERSION = '0.08';
 
+=encoding utf8
+
 =head1 NAME
 
 GIS::Distance::Formula::Haversine::Fast - C implementation of GIS::Distance::Formula::Haversine.
@@ -11,15 +13,6 @@ GIS::Distance::Formula::Haversine::Fast - C implementation of GIS::Distance::For
 
 This module is used by L<GIS::Distance> and has the same API as
 L<GIS::Distance::Formula::Haversine>.
-
-=head1 AUTHOR
-
-Aran Clary Deltac <bluefeet@cpan.org>
-
-=head1 LICENSE
-
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
 
 =cut
 
@@ -40,3 +33,11 @@ sub distance {
 }
 
 1;
+__END__
+
+=head1 AUTHORS AND LICENSE
+
+See L<GIS::Distance::Fast/AUTHORS> and L<GIS::Distance::Fast/LICENSE>.
+
+=cut
+

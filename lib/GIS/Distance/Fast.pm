@@ -3,6 +3,8 @@ use 5.008001;
 use strictures 2;
 our $VERSION = '0.08';
 
+=encoding utf8
+
 =head1 NAME
 
 GIS::Distance::Fast - C implementation of GIS::Distance formulas.
@@ -50,9 +52,9 @@ The L<GIS::Distance::Formula::Vincenty::Fast> produces slightly different result
 L<GIS::Distance::Formula::Vincenty>.  Read the POD for L<GIS::Distance::Formula::Vincenty::Fast>
 for details.
 
-=head1 AUTHOR
+=head1 AUTHORS
 
-Aran Clary Deltac <bluefeet@cpan.org>
+    Aran Clary Deltac <bluefeet@gmail.com>
 
 =head1 LICENSE
 
