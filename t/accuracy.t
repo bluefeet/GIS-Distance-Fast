@@ -10,10 +10,10 @@ my @formulas = qw( Haversine Cosine Vincenty );
 my $gis = GIS::Distance->new();
 
 foreach my $formula (@formulas) {
-    $gis->formula( 'GIS::Distance::Formula::'.$formula );
+    my $s_gis = GIS::Distance->new( "GIS::Distance::$formula" );
     my $s_length = $gis->distance( @coords )->km();
 
-    $gis->formula( 'GIS::Distance::Formula::'.$formula.'::Fast' );
+    my $f_gis = GIS::Distance->new( "GIS::Distance::Fast::$formula" );
     my $f_length = $gis->distance( @coords )->km();
 
     is_close( $s_length, $f_length, $formula );

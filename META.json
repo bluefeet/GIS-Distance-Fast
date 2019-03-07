@@ -42,9 +42,8 @@
       },
       "runtime" : {
          "requires" : {
-            "Class::Measure::Length" : "0",
-            "GIS::Distance::Formula" : "0.09",
-            "Moo" : "2.000000",
+            "GIS::Distance" : "0.10",
+            "GIS::Distance::Constants" : "0.10",
             "namespace::clean" : "0.24",
             "perl" : "5.008001",
             "strictures" : "2.000000"
@@ -73,6 +72,6 @@
    "x_contributors" : [
       "Aran Deltac <aran@ziprecruiter.com>"
    ],
-   "x_serialization_backend" : "JSON::PP version 2.97001",
+   "x_serialization_backend" : "JSON::PP version 4.02",
    "x_static_install" : 0
 }
