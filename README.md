@@ -16,17 +16,11 @@ use the ::Fast formulas when they are available.
 
 # FORMULAS
 
-[GIS::Distance::Formula::Cosine::Fast](https://metacpan.org/pod/GIS::Distance::Formula::Cosine::Fast)
+[GIS::Distance::Fast::Cosine](https://metacpan.org/pod/GIS::Distance::Fast::Cosine)
 
-[GIS::Distance::Formula::Haversine::Fast](https://metacpan.org/pod/GIS::Distance::Formula::Haversine::Fast)
+[GIS::Distance::Fast::Haversine](https://metacpan.org/pod/GIS::Distance::Fast::Haversine)
 
-[GIS::Distance::Formula::Vincenty::Fast](https://metacpan.org/pod/GIS::Distance::Formula::Vincenty::Fast)
-
-# BUGS
-
-The [GIS::Distance::Formula::Vincenty::Fast](https://metacpan.org/pod/GIS::Distance::Formula::Vincenty::Fast) produces slightly different results than
-[GIS::Distance::Formula::Vincenty](https://metacpan.org/pod/GIS::Distance::Formula::Vincenty).  Read the POD for [GIS::Distance::Formula::Vincenty::Fast](https://metacpan.org/pod/GIS::Distance::Formula::Vincenty::Fast)
-for details.
+[GIS::Distance::Fast::Vincenty](https://metacpan.org/pod/GIS::Distance::Fast::Vincenty)
 
 # SUPPORT
 
