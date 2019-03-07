@@ -67,7 +67,7 @@
          "web" : "https://github.com/bluefeet/GIS-Distance-Fast"
       }
    },
-   "version" : "0.09",
+   "version" : "0.10",
    "x_authority" : "cpan:BLUEFEET",
    "x_contributors" : [
       "Aran Deltac <aran@ziprecruiter.com>"
