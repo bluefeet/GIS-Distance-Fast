@@ -1,7 +1,7 @@
 package GIS::Distance::Fast::Vincenty;
 use 5.008001;
 use strictures 2;
-our $VERSION = '0.08';
+our $VERSION = '0.09';
 
 use GIS::Distance::Fast;
 use GIS::Distance::Constants qw( :all );
