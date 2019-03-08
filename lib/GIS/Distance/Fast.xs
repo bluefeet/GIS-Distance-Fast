@@ -1,31 +1,31 @@
 #include "EXTERN.h"
 #include "perl.h"
 #include "XSUB.h"
+#include "ppport.h"
 
 #include <math.h>
 
-double _deg2rad(double deg) {
-    return ( deg * ( M_PI / 180.0 ) );
-}
+const double DEG_RADS = M_PI / 180.;
+const double KILOMETER_RHO = 6371.64;
 
 double cosine_distance(double lat1, double lon1, double lat2, double lon2) {
-    lon1 = _deg2rad( lon1 );
-    lat1 = _deg2rad( lat1 );
-    lon2 = _deg2rad( lon2 );
-    lat2 = _deg2rad( lat2 );
+    lon1 *= DEG_RADS;
+    lat1 *= DEG_RADS;
+    lon2 *= DEG_RADS;
+    lat2 *= DEG_RADS;
 
     double a = sin( lat1 ) * sin( lat2 );
     double b = cos( lat1 ) * cos( lat2 ) * cos( lon2 - lon1 );
     double c = acos( a + b );
 
-    return 6371.64 * c;
+    return KILOMETER_RHO * c;
 }
 
 double great_circle_distance(double lat1, double lon1, double lat2, double lon2) {
-    lon1 = _deg2rad( lon1 );
-    lat1 = _deg2rad( lat1 );
-    lon2 = _deg2rad( lon2 );
-    lat2 = _deg2rad( lat2 );
+    lon1 *= DEG_RADS;
+    lat1 *= DEG_RADS;
+    lon2 *= DEG_RADS;
+    lat2 *= DEG_RADS;
 
     double c = 2 * asin( sqrt(
         pow( sin((lat1-lat2)/2), 2.0 ) +
@@ -33,44 +33,45 @@ double great_circle_distance(double lat1, double lon1, double lat2, double lon2)
         pow( sin((lon1-lon2)/2), 2.0 )
     ) );
 
-    return 6371.64 * c;
+    return KILOMETER_RHO * c;
 }
 
 double haversine_distance(double lat1, double lon1, double lat2, double lon2) {
-    lon1 = _deg2rad( lon1 );
-    lat1 = _deg2rad( lat1 );
-    lon2 = _deg2rad( lon2 );
-    lat2 = _deg2rad( lat2 );
+    lon1 *= DEG_RADS;
+    lat1 *= DEG_RADS;
+    lon2 *= DEG_RADS;
+    lat2 *= DEG_RADS;
 
     double dlon = lon2 - lon1;
     double dlat = lat2 - lat1;
     double a = pow( sin(dlat/2.0), 2.0 ) + cos(lat1) * cos(lat2) * pow( sin(dlon/2.0), 2.0 );
     double c = 2.0 * atan2( sqrt(a), sqrt(1.0-a) );
 
-    return 6371.64 * c;
+    return KILOMETER_RHO * c;
 }
 
 double polar_distance(double lat1, double lon1, double lat2, double lon2) {
-    lon1 = _deg2rad( lon1 );
-    lat1 = _deg2rad( lat1 );
-    lon2 = _deg2rad( lon2 );
-    lat2 = _deg2rad( lat2 );
+    lon1 *= DEG_RADS;
+    lat1 *= DEG_RADS;
+    lon2 *= DEG_RADS;
+    lat2 *= DEG_RADS;
 
     double a = M_PI / 2 - lat1;
     double b = M_PI / 2 - lat2;
     double c = sqrt( pow(a, 2.0) + pow(b, 2.0) - 2 * a * b * cos(lon2 - lon1) );
 
-    return 6371.64 * c;
+    return KILOMETER_RHO * c;
 }
 
 double vincenty_distance(double lat1, double lon1, double lat2, double lon2) {
     if ( (lon1==lon2) && (lat1==lat2) ) {
         return 0;
     }
-    lon1 = _deg2rad( lon1 );
-    lat1 = _deg2rad( lat1 );
-    lon2 = _deg2rad( lon2 );
-    lat2 = _deg2rad( lat2 );
+
+    lon1 *= DEG_RADS;
+    lat1 *= DEG_RADS;
+    lon2 *= DEG_RADS;
+    lat2 *= DEG_RADS;
 
     double a = 6378137.0;
     double b = 6356752.3142;
