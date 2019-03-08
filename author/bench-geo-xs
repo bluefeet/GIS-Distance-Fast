@@ -1,0 +1,39 @@
+#!/usr/bin/env perl
+use strictures 2;
+
+use Benchmark qw( cmpthese );
+
+use Geo::Distance;
+use Geo::Distance::XS;
+
+use GIS::Distance::Fast::Haversine;
+use GIS::Distance::Fast::Vincenty;
+
+my $geo_hsin = Geo::Distance->new();
+$geo_hsin->formula('hsin');
+
+my $gis_haversine = GIS::Distance->new( 'GIS::Distance::Fast::Haversine' );
+
+my @coords = ( 34.202361, -118.601875,  37.752258, -122.441254 );
+
+cmpthese(
+    5_000_000,
+    {
+        'Geo-hsin-raw' => sub{
+            Geo::Distance::XS::distance(
+                $geo_hsin, 'kilometer', @coords,
+            );
+        },
+        'GIS-Haversine-raw' => sub{
+            GIS::Distance::Fast::Haversine::distance(
+                @coords,
+            );
+        },
+        'GIS-Haversine-distance' => sub{
+            $gis_haversine->distance( @coords );
+        },
+        'GIS-Haversine-distance_km' => sub{
+            $gis_haversine->distance_km( @coords );
+        },
+    },
+);

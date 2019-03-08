@@ -4,13 +4,11 @@ use strictures 2;
 our $VERSION = '0.10';
 
 use GIS::Distance::Fast;
-use GIS::Distance::Constants qw( :all );
 use namespace::clean;
 
-sub distance {
-    my $c = GIS::Distance::Fast::vincenty_distance( @_ );
-
-    return $c / 1000;
+{
+    no strict 'refs';
+    *distance = \&GIS::Distance::Fast::vincenty_distance;
 }
 
 1;

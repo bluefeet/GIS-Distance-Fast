@@ -18,7 +18,7 @@ double cosine_distance(double lat1, double lon1, double lat2, double lon2) {
     double b = cos( lat1 ) * cos( lat2 ) * cos( lon2 - lon1 );
     double c = acos( a + b );
 
-    return c;
+    return 6371.64 * c;
 }
 
 double great_circle_distance(double lat1, double lon1, double lat2, double lon2) {
@@ -33,7 +33,7 @@ double great_circle_distance(double lat1, double lon1, double lat2, double lon2)
         pow( sin((lon1-lon2)/2), 2.0 )
     ) );
 
-    return c;
+    return 6371.64 * c;
 }
 
 double haversine_distance(double lat1, double lon1, double lat2, double lon2) {
@@ -47,7 +47,7 @@ double haversine_distance(double lat1, double lon1, double lat2, double lon2) {
     double a = pow( sin(dlat/2.0), 2.0 ) + cos(lat1) * cos(lat2) * pow( sin(dlon/2.0), 2.0 );
     double c = 2.0 * atan2( sqrt(a), sqrt(1.0-a) );
 
-    return c;
+    return 6371.64 * c;
 }
 
 double polar_distance(double lat1, double lon1, double lat2, double lon2) {
@@ -60,7 +60,7 @@ double polar_distance(double lat1, double lon1, double lat2, double lon2) {
     double b = M_PI / 2 - lat2;
     double c = sqrt( pow(a, 2.0) + pow(b, 2.0) - 2 * a * b * cos(lon2 - lon1) );
 
-    return c;
+    return 6371.64 * c;
 }
 
 double vincenty_distance(double lat1, double lon1, double lat2, double lon2) {
@@ -123,7 +123,7 @@ double vincenty_distance(double lat1, double lon1, double lat2, double lon2) {
         bb/6.0*cos2sigma_m*(-3.0+4.0*sin_sigma*sin_sigma)*(-3.0+4.0*cos2sigma_m*cos2sigma_m)));
     double c = b*aa*(sigma-delta_sigma);
 
-    return c;
+    return c / 1000;
 }
 
 MODULE = GIS::Distance::Fast     PACKAGE = GIS::Distance::Fast
