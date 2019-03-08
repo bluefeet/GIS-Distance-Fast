@@ -44,6 +44,8 @@ L<GIS::Distance::Fast::GreatCircle>
 
 L<GIS::Distance::Fast::Haversine>
 
+L<GIS::Distance::Fast::Polar>
+
 L<GIS::Distance::Fast::Vincenty>
 
 =head1 SUPPORT

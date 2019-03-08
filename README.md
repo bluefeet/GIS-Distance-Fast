@@ -22,6 +22,8 @@ use the ::Fast formulas when they are available.
 
 [GIS::Distance::Fast::Haversine](https://metacpan.org/pod/GIS::Distance::Fast::Haversine)
 
+[GIS::Distance::Fast::Polar](https://metacpan.org/pod/GIS::Distance::Fast::Polar)
+
 [GIS::Distance::Fast::Vincenty](https://metacpan.org/pod/GIS::Distance::Fast::Vincenty)
 
 # SUPPORT

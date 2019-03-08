@@ -50,6 +50,19 @@ double haversine_distance(double lat1, double lon1, double lat2, double lon2) {
     return c;
 }
 
+double polar_distance(double lat1, double lon1, double lat2, double lon2) {
+    lon1 = _deg2rad( lon1 );
+    lat1 = _deg2rad( lat1 );
+    lon2 = _deg2rad( lon2 );
+    lat2 = _deg2rad( lat2 );
+
+    double a = M_PI / 2 - lat1;
+    double b = M_PI / 2 - lat2;
+    double c = sqrt( pow(a, 2.0) + pow(b, 2.0) - 2 * a * b * cos(lon2 - lon1) );
+
+    return c;
+}
+
 double vincenty_distance(double lat1, double lon1, double lat2, double lon2) {
     if ( (lon1==lon2) && (lat1==lat2) ) {
         return 0;
@@ -133,6 +146,13 @@ great_circle_distance (lat1, lon1, lat2, lon2)
 
 double
 haversine_distance (lat1, lon1, lat2, lon2)
+    double lat1
+    double lon1
+    double lat2
+    double lon2
+
+double
+polar_distance (lat1, lon1, lat2, lon2)
     double lat1
     double lon1
     double lat2
