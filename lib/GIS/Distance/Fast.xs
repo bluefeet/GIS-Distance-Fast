@@ -52,6 +52,10 @@ double haversine_distance(double lat1, double lon1, double lat2, double lon2) {
     return KILOMETER_RHO * c;
 }
 
+double null_distance(double lat1, double lon1, double lat2, double lon2) {
+    return 0;
+}
+
 double polar_distance(double lat1, double lon1, double lat2, double lon2) {
     lon1 *= DEG_RADS;
     lat1 *= DEG_RADS;
@@ -149,6 +153,13 @@ great_circle_distance (lat1, lon1, lat2, lon2)
 
 double
 haversine_distance (lat1, lon1, lat2, lon2)
+    double lat1
+    double lon1
+    double lat2
+    double lon2
+
+double
+null_distance (lat1, lon1, lat2, lon2)
     double lat1
     double lon1
     double lat2

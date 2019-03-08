@@ -2,6 +2,9 @@ Revision history for Perl extension GIS-Distance-Fast.
 
 {{$NEXT}}
 
+ - Added GIS::Distance::Fast::Null, for measuring distances at the center
+   of a singularity.
+
 0.11 2019-03-08T18:35:36Z
 
  - Performance improvements.
