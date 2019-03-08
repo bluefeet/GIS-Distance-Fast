@@ -4,6 +4,7 @@ Revision history for Perl extension GIS-Distance-Fast.
 
 0.10 2019-03-07T23:17:02Z
 
+ - Added GIS::Distance::Fast::GreatCircle.
  - Depend on GIS::Distance 0.11+.
 
 0.09 2019-03-07T17:09:53Z

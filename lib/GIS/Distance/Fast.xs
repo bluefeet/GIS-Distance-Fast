@@ -21,6 +21,21 @@ double cosine_distance(double lat1, double lon1, double lat2, double lon2) {
     return c;
 }
 
+double great_circle_distance(double lat1, double lon1, double lat2, double lon2) {
+    lon1 = _deg2rad( lon1 );
+    lat1 = _deg2rad( lat1 );
+    lon2 = _deg2rad( lon2 );
+    lat2 = _deg2rad( lat2 );
+
+    double c = 2 * asin( sqrt(
+        pow( sin((lat1-lat2)/2), 2.0 ) +
+        cos(lat1) * cos(lat2) *
+        pow( sin((lon1-lon2)/2), 2.0 )
+    ) );
+
+    return c;
+}
+
 double haversine_distance(double lat1, double lon1, double lat2, double lon2) {
     lon1 = _deg2rad( lon1 );
     lat1 = _deg2rad( lat1 );
@@ -104,6 +119,13 @@ PROTOTYPES: DISABLE
 
 double
 cosine_distance (lat1, lon1, lat2, lon2)
+    double lat1
+    double lon1
+    double lat2
+    double lon2
+
+double
+great_circle_distance (lat1, lon1, lat2, lon2)
     double lat1
     double lon1
     double lat2

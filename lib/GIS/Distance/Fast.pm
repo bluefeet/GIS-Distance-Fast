@@ -40,6 +40,8 @@ use the ::Fast formulas when they are available.
 
 L<GIS::Distance::Fast::Cosine>
 
+L<GIS::Distance::Fast::GreatCircle>
+
 L<GIS::Distance::Fast::Haversine>
 
 L<GIS::Distance::Fast::Vincenty>
