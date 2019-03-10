@@ -10,6 +10,48 @@
 const double DEG_RADS = M_PI / 180.;
 const double KILOMETER_RHO = 6371.64;
 
+/* Sphere with equal meridian length */
+const double RM = 6367449.14582342;
+
+/* WGS 84 Ellipsoid */
+const double A = 6378137.;
+const double B = 6356752.314245;
+const double F = 1. / 298.257223563;
+
+double alt_distance(double lat1, double lon1, double lat2, double lon2) {
+    double f = 0.5 * (lat2 + lat1) * DEG_RADS;
+    double g = 0.5 * (lat2 - lat1) * DEG_RADS;
+    double l = 0.5 * (lon2 - lon1) * DEG_RADS;
+
+    double sf = sin(f), sg = sin(g), sl = sin(l);
+    double s2f = sf * sf, s2g = sg * sg, s2l = sl * sl;
+    double c2f = 1. - s2f, c2g = 1. - s2g, c2l = 1. - s2l;
+
+    double s2 = s2g * c2l + c2f * s2l;
+    double c2 = c2g * c2l + s2f * s2l;
+
+    double s, c, omega, rr, aa, bb, pp, qq, d2, qp, eps1, eps2;
+
+    if (s2 == 0.) return 0.;
+    if (c2 == 0.) return M_PI * RM / 0.001;
+
+    s = sqrt(s2), c = sqrt(c2);
+    omega = atan2(s, c);
+    rr = s * c;
+    aa = s2g * c2f / s2 + s2f * c2g / c2;
+    bb = s2g * c2f / s2 - s2f * c2g / c2;
+    pp = rr / omega;
+    qq = omega / rr;
+    d2 = s2 - c2;
+    qp = qq + 6. * pp;
+    eps1 = 0.5 * F * (-aa - 3. * bb * pp);
+    eps2 = 0.25 * F * F * ((-qp * bb + (-3.75 + d2 * (qq + 3.75 * pp)) *
+            aa + 4. - d2 * qq) * aa - (7.5 * d2 * bb * pp - qp) * bb);
+
+    double d = 2. * omega * A * (1. + eps1 + eps2);
+    return d * 0.001;
+}
+
 double cosine_distance(double lat1, double lon1, double lat2, double lon2) {
     lon1 *= DEG_RADS;
     lat1 *= DEG_RADS;
@@ -136,6 +178,13 @@ double vincenty_distance(double lat1, double lon1, double lat2, double lon2) {
 MODULE = GIS::Distance::Fast     PACKAGE = GIS::Distance::Fast
 
 PROTOTYPES: DISABLE
+
+double
+alt_distance (lat1, lon1, lat2, lon2)
+    double lat1
+    double lon1
+    double lat2
+    double lon2
 
 double
 cosine_distance (lat1, lon1, lat2, lon2)
