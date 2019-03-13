@@ -24,9 +24,17 @@ See L<GIS::Distance::Null> for details about this formula.
 Normally this module is not used directly.  Instead L<GIS::Distance>
 is used which in turn interfaces with the various formula modules.
 
-=head1 AUTHORS AND LICENSE
+=head1 SUPPORT
 
-See L<GIS::Distance::Fast/AUTHORS> and L<GIS::Distance::Fast/LICENSE>.
+See L<GIS::Distance::Fast/SUPPORT>.
+
+=head1 AUTHORS
+
+See L<GIS::Distance::Fast/AUTHORS>.
+
+=head1 LICENSE
+
+See L<GIS::Distance::Fast/LICENSE>.
 
 =cut
 
