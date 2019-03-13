@@ -21,7 +21,8 @@ GIS::Distance::Fast::ALT - C implementation of GIS::Distance::ALT.
 
 See L<GIS::Distance::ALT> for details about this formula.
 
-This formula's code was taken from L<GIS::Distance::XS> and modified to fit.
+The code for this formula was taken from L<GIS::Distance::XS> and
+modified to fit.
 
 Normally this module is not used directly.  Instead L<GIS::Distance>
 is used which in turn interfaces with the various formula modules.
