@@ -42,8 +42,8 @@
       },
       "runtime" : {
          "requires" : {
-            "GIS::Distance" : "0.14",
-            "GIS::Distance::Constants" : "0.14",
+            "GIS::Distance" : "0.16",
+            "GIS::Distance::Constants" : "0.16",
             "namespace::clean" : "0.24",
             "perl" : "5.008001",
             "strictures" : "2.000000"

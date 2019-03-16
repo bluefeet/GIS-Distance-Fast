@@ -3,10 +3,12 @@ use 5.008001;
 use strictures 2;
 our $VERSION = '0.12';
 
+use parent 'GIS::Distance::Formula';
+
 use GIS::Distance::Fast;
 use namespace::clean;
 
-*distance = \&GIS::Distance::Fast::null_distance;
+*_distance = \&GIS::Distance::Fast::null_distance;
 
 1;
 __END__
