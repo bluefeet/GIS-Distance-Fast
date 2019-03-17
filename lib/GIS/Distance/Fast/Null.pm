@@ -1,7 +1,7 @@
 package GIS::Distance::Fast::Null;
 use 5.008001;
 use strictures 2;
-our $VERSION = '0.12';
+our $VERSION = '0.13';
 
 use parent 'GIS::Distance::Formula';
 
