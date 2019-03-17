@@ -24,7 +24,7 @@ GIS::Distance::Fast::Null - C implementation of GIS::Distance::Null.
 See L<GIS::Distance::Null> for details about this formula.
 
 Normally this module is not used directly.  Instead L<GIS::Distance>
-is used which in turn interfaces with the various formula modules.
+is used which in turn interfaces with the various formula classes.
 
 =head1 SUPPORT
 

@@ -28,7 +28,7 @@ different.  I'm still not sure why this is, as the C code is nearly identical to
 the Perl code.
 
 Normally this module is not used directly.  Instead L<GIS::Distance>
-is used which in turn interfaces with the various formula modules.
+is used which in turn interfaces with the various formula classes.
 
 =head1 SUPPORT
 
