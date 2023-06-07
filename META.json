@@ -4,7 +4,7 @@
       "Aran Clary Deltac <bluefeet@gmail.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v3.1.11, CPAN::Meta::Converter version 2.150010",
+   "generated_by" : "Minilla/v3.1.21, CPAN::Meta::Converter version 2.150010",
    "license" : [
       "perl_5"
    ],
@@ -64,12 +64,12 @@
       "homepage" : "https://github.com/bluefeet/GIS-Distance-Fast",
       "repository" : {
          "type" : "git",
-         "url" : "git://github.com/bluefeet/GIS-Distance-Fast.git",
+         "url" : "https://github.com/bluefeet/GIS-Distance-Fast.git",
          "web" : "https://github.com/bluefeet/GIS-Distance-Fast"
       }
    },
    "version" : "0.15",
    "x_authority" : "cpan:BLUEFEET",
-   "x_serialization_backend" : "JSON::PP version 4.02",
+   "x_serialization_backend" : "JSON::PP version 4.07",
    "x_static_install" : 0
 }

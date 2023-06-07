@@ -2,6 +2,8 @@ Revision history for Perl extension GIS-Distance-Fast.
 
 {{$NEXT}}
 
+ - Minor metadata and boilerplate updates.
+
 0.15 2021-01-30T06:11:56Z
 
  - Provide a .editorconfig instead of .lvimrc.
